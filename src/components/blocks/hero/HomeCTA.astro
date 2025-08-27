@@ -1,0 +1,60 @@
+---
+// Home page CTA Section
+// ------------
+// Description: A centered call to action section that contains: a title, text, a user review snippet, a button and a image.
+
+// Components
+// - Layout
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+// - UI
+import ChipNotification from '../../ui/ChipNotification.astro'
+import { Image } from 'astro:assets'
+import Button from '../../ui/Button.astro'
+import AvatarGroup from '../../ui/AvatarGroup.astro'
+
+// Content
+// - Hero Image
+import heroImage from '../../../assets/hero-01.webp'
+// - Avatars
+// import user1 from '../../../assets/avatars/avatar-01.webp'
+// import user2 from '../../../assets/avatars/avatar-02.webp'
+// import user3 from '../../../assets/avatars/avatar-03.webp'
+// const avatars = [
+// 	{ image: { src: user1.src, alt: 'user name' }, link: '/' },
+// 	{ image: { src: user2.src, alt: 'user name' }, link: '/' },
+// 	{ image: { src: user3.src, alt: 'user name' }, link: '/' }
+// ]
+---
+
+<Section id="intro"  classes="bg-neutral-50 dark:bg-neutral-900 ">
+	<br>
+
+	<br>
+	<Row>
+		<Col span="6" align='left'>
+			<!-- <ChipNotification radius="rounded-full" classes="mb-6">
+				<strong>30K+</strong> satisfied customers
+				<AvatarGroup avatars={avatars} radius="rounded-full" slot="button" />
+			</ChipNotification> -->
+			<h1>Agencia de <strong>automatización</strong> de IA </h1>
+
+			<p class="pb-0 text-lg">Impulsa la eficiencia de tu empresa con soluciones innovadoras basadas en inteligencia artificial.</p>
+			<Button link="https://calendly.com/admin-intelexialabs/reunion-intelexia-labs">Agenda una reunión</Button>
+			<Button style="neutral" link="#aboutus">¿Quienes somos?</Button>
+		</Col>
+		<Col span="6">
+			<!-- Imagen a la derecha -->
+			<Image
+			  src={heroImage}
+			  alt="Other Brain | Hero image"
+			  class="shadow-2xl shadow-neutral-200 dark:shadow-neutral-950"
+			  format="webp"
+			/>
+		  </Col>
+	</Row>
+	<br>
+	<br>
+	<br>
+</Section>

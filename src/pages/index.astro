@@ -1,0 +1,38 @@
+---
+// Components
+// - Layout
+import Layout from '../layouts/Layout.astro'
+// - UI
+import Hero from '../components/blocks/hero/HomeCTA.astro'
+import Features from '../components/blocks/features/FeatureCards.astro'
+import ContactCards from '../components/blocks/contact/ContactCards.astro'
+
+// Content
+import aboutus1 from '../assets/aboutus/aboutus1.webp'
+// - Testimonial background
+import TextImage from '../components/blocks/basic/TextImage.astro'
+// - SEO
+const SEO = {
+	title: 'Other Brain',
+	description:
+		'Transformando la eficiencia, con soluciones de inteligencia artificial a la medida',
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<Hero />
+	<Features />
+	<TextImage
+		id='aboutus'
+		title="Innovación al Servicio de tu Negocio"
+		text="En Other Brain, creemos en la transformación estratégica a través de la inteligencia artificial. Ofrecemos soluciones personalizadas diseñadas para optimizar tus recursos, reducir costos y mantenerte a la vanguardia de la innovación. "
+		image={aboutus1}
+		mobileImage={aboutus1}
+		imagePosition="left"
+		offsetImage
+		classes="bg-neutral-50 dark:bg-neutral-900"
+	/>
+	<ContactCards  classes="dark:bg-neutral-950/80" />
+	
+</Layout>
+

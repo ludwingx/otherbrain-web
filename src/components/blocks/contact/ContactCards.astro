@@ -1,0 +1,44 @@
+---
+// Eliminamos las cards y agregamos info personal
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+import Button from '../../ui/Button.astro'
+
+type Props = {
+	classes?: string
+}
+const { classes } = Astro.props
+---
+
+<Section id="contact" classes={classes}>
+	<Row>
+		<Col span="12" align="center" classes="mb-12 max-w-4xl mx-auto">
+			<h2 class="text-balance">¿Listo para <strong>empezar</strong>?</h2>
+			<p class="pb-0 text-lg">
+				Experimente el futuro de las operaciones empresariales con la automatización de la IA: mayor velocidad, precisión y adaptabilidad, que impulsan el aumento de la productividad general. Agende una reunión para descubrir cómo nuestros servicios pueden optimizar sus procesos.
+			</p>
+			<br>
+			<Button size="lg" link="https://calendly.com/admin-intelexialabs/reunion-intelexia-labs">Agendar una reunión</Button>
+			<br><br>
+			<div class="mt-6 text-sm">
+				<p>
+				  Teléfono:
+				  <a
+					href="https://wa.me/59175528111"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="inline-flex items-center gap-2 text-green-600 hover:underline"
+				  >
+					
+					+591 75528111
+				  </a>
+				</p>
+				<p>
+					jmantelo@intelexialabs.com
+				</p>
+			  </div>
+			  
+		</Col>
+	</Row>
+</Section>

@@ -1,0 +1,97 @@
+---
+// Feature Cards grid Section
+// ------------
+// Description: A grid of cards with feature information in a 4 column layout.
+
+// Components
+// - Layout
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+// - UI
+import Card from '../../ui/cards/FeatureCard.astro'
+
+// Content
+// - Cards
+import feature01 from '../../../assets/cards/feature01.svg'
+import feature02 from '../../../assets/cards/feature02.svg'
+import feature03 from '../../../assets/cards/feature03.svg'
+import feature04 from '../../../assets/cards/feature04.svg'
+import feature05 from '../../../assets/cards/feature05.svg'
+import feature06 from '../../../assets/cards/feature06.svg'
+---
+
+<Section id="features">
+	<Row>
+		<Col span="12" align="center" classes="mb-12 max-w-4xl mx-auto">
+			<h2 class="text-pretty pb-4">Soluciones <strong>Inteligentes</strong> para Empresas</h2>
+			<h3>Nuestros servicios</h3>
+			<p class="pb-0 text-lg">
+				En Other Brain, combinamos innovación y tecnología para ofrecer soluciones disruptivas que transforman la manera en que las empresas operan y generan valor.
+			</p>
+		</Col>
+	</Row>
+	<Row>
+		<Col span="4" classes="flex flex-col gap-6">
+			<Card
+				title="Desarrollo de Modelos de IA Personalizados"
+				subtitle="Creamos algoritmos y modelos de IA adaptados a las necesidades específicas de tu negocio."
+				image={feature01}
+				
+			/>
+			<Card
+				title="Chatbots y Asistentes Virtuales"
+				subtitle="Diseñamos chatbots avanzados que mejoran la atención al cliente y optimizan la interacción."
+				image={feature04}
+			/>
+		</Col>
+		<Col span="4" classes="flex flex-col gap-6">
+			<Card
+				title="Automatización de Procesos Empresariales"
+				subtitle="Automatizamos tareas repetitivas y optimizamos procesos empresariales con IA y RPA."
+				image={feature02}
+			/>
+			<Card
+				title="Optimización de Procesos y Logística"
+				subtitle="Utilizamos IA para gestionar inventarios, optimizar cadenas de suministro y planificar rutas eficientemente."
+				image={feature05}
+			/>
+		</Col>
+		<Col span="4" classes="flex flex-col gap-6">
+			<Card
+				title="Análisis de Datos y Big Data"
+				subtitle="Implementamos soluciones para analizar grandes volúmenes de datos, identificar patrones y tomar decisiones basadas en datos."
+				image={feature03}
+			/>
+			<Card
+				title="Optimización del Marketing Digital"
+				subtitle="Mejora tus campañas de marketing con segmentación avanzada y análisis predictivo."
+				image={feature06}
+			/>
+		</Col>
+	</Row>
+</Section>
+<style>
+	.card-filter img {
+  filter: grayscale(100%) brightness(80%);
+  opacity: 0.9;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.card-filter:hover img {
+  filter: none;
+  opacity: 1;
+}
+
+.card-filter {
+  border: 1px solid var(--primary-border-color);
+  background-color: var(--primary-bg-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.card-filter:hover {
+  background-color: var(--hover-bg-color);
+  border-color: var(--hover-border-color);
+}
+
+</style>
