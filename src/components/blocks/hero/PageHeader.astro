@@ -11,30 +11,35 @@ import Col from '../../ui/Col.astro'
 
 // Props
 type Props = {
-	id?: string
-	title?: string
-	text?: string
-	classes?: string
+  id?: string
+  title?: string
+  text?: string
+  classes?: string
+  bg?: any
 }
-const { id = 'intro', title, text, classes } = Astro.props
+const { id = 'intro', title, text, classes = '', bg } = Astro.props
 ---
 
-<Section id={id} classes=`bg-neutral-50 dark:bg-neutral-900 ${classes}`>
-	<Row>
-		<Col span="12" align="center">
-			<header class="page-header">
-				<h1 class="page-header__title" set:html={title} />
-				<p class="page-header__text" set:html={text} />
-			</header>
-		</Col>
-	</Row>
+<Section
+  id={id}
+  bg={bg}
+  bgPosition="center"
+  bgHeight="100%"
+  classes={`relative min-h-[60vh] flex flex-col items-center justify-center overflow-hidden ${classes}`}
+>
+  <div class="absolute inset-0 bg-black/40"></div> <!-- Overlay para legibilidad -->
+  <div class="relative z-10 flex flex-col items-center justify-center w-full max-w-2xl mx-auto text-center py-12">
+    <h1 class="text-4xl md:text-6xl font-bold mb-4" set:html={title} />
+    <p class="text-lg md:text-2xl mb-8" set:html={text} />
+    <slot />
+  </div>
 </Section>
 
 <style>
-	.page-header {
-		@apply mx-auto max-w-3xl;
-	}
-	.page-header__text {
-		@apply text-lg leading-relaxed;
-	}
+  .page-header {
+    @apply mx-auto max-w-3xl;
+  }
+  .page-header__text {
+    @apply text-lg leading-relaxed;
+  }
 </style>

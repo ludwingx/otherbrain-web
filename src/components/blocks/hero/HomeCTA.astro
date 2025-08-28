@@ -1,60 +1,54 @@
 ---
-// Home page CTA Section
-// ------------
-// Description: A centered call to action section that contains: a title, text, a user review snippet, a button and a image.
-
-// Components
-// - Layout
-import Section from '../../ui/Section.astro'
-import Row from '../../ui/Row.astro'
-import Col from '../../ui/Col.astro'
-// - UI
-import ChipNotification from '../../ui/ChipNotification.astro'
-import { Image } from 'astro:assets'
-import Button from '../../ui/Button.astro'
-import AvatarGroup from '../../ui/AvatarGroup.astro'
+// src/components/sections/HeroWithBg.astro
+import Section from '../../ui/Section.astro';
+import Button from '../../ui/Button.astro';
+import { Image } from 'astro:assets';
 
 // Content
-// - Hero Image
-import heroImage from '../../../assets/hero-01.webp'
-// - Avatars
-// import user1 from '../../../assets/avatars/avatar-01.webp'
-// import user2 from '../../../assets/avatars/avatar-02.webp'
-// import user3 from '../../../assets/avatars/avatar-03.webp'
-// const avatars = [
-// 	{ image: { src: user1.src, alt: 'user name' }, link: '/' },
-// 	{ image: { src: user2.src, alt: 'user name' }, link: '/' },
-// 	{ image: { src: user3.src, alt: 'user name' }, link: '/' }
-// ]
+import heroImage from '../../../assets/hero-01.webp';
 ---
 
-<Section id="intro"  classes="bg-neutral-50 dark:bg-neutral-900 ">
-	<br>
+<Section 
+  id="hero"
+  mode="dark"
+  padding="both"
+  classes={`relative min-h-[80vh] flex items-center justify-center text-center overflow-hidden`}
+  bg={{
+    src: heroImage.src,
+    width: 1920,
+    height: 1080,
+    format: 'webp'
+  }}
+  bgPosition="center"
+  bgHeight="100%"
+>
+  <!-- Contenido principal -->
+  <div class="container relative z-10 px-6 mx-auto text-white">
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+      Agencia de <strong>automatización</strong> de IA
+    </h1>
 
-	<br>
-	<Row>
-		<Col span="6" align='left'>
-			<!-- <ChipNotification radius="rounded-full" classes="mb-6">
-				<strong>30K+</strong> satisfied customers
-				<AvatarGroup avatars={avatars} radius="rounded-full" slot="button" />
-			</ChipNotification> -->
-			<h1>Agencia de <strong>automatización</strong> de IA </h1>
+    <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-8 text-teal-100">
+      Impulsa la eficiencia de tu empresa con soluciones innovadoras basadas en inteligencia artificial.
+    </p>
 
-			<p class="pb-0 text-lg">Impulsa la eficiencia de tu empresa con soluciones innovadoras basadas en inteligencia artificial.</p>
-			<Button link="https://calendly.com/admin-intelexialabs/reunion-intelexia-labs">Agenda una reunión</Button>
-			<Button style="neutral" link="#aboutus">¿Quienes somos?</Button>
-		</Col>
-		<Col span="6">
-			<!-- Imagen a la derecha -->
-			<Image
-			  src={heroImage}
-			  alt="Other Brain | Hero image"
-			  class="shadow-2xl shadow-neutral-200 dark:shadow-neutral-950"
-			  format="webp"
-			/>
-		  </Col>
-	</Row>
-	<br>
-	<br>
-	<br>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <Button 
+        link="https://calendly.com/admin-intelexialabs/reunion-intelexia-labs" 
+        classes="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg"
+      >
+        Agenda una reunión
+      </Button>
+      
+      <Button 
+        style="neutral" 
+        link="#aboutus"
+        classes="bg-transparent border-2 border-teal-300 text-teal-300 hover:bg-teal-300/10 px-8 py-3 text-lg"
+      >
+        ¿Quienes somos?
+      </Button>
+    </div>
+  </div>
 </Section>
+
+

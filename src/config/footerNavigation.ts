@@ -102,6 +102,6 @@ export const footerNavigationData: FooterData = {
 		// }
 	],
 	subFooter: {
-		copywriteText: '© Other Brain 2024.'
+		copywriteText: '© Other Brain 2025.'
 	}
 }
