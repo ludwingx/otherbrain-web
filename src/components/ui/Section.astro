@@ -30,6 +30,7 @@ type Props = {
 	bgPosition?: string
 	bgHeight?: string
 	classes?: string
+	overlayOpacity?: number
 }
 const {
 	id,
@@ -40,7 +41,8 @@ const {
 	bg,
 	bgPosition = 'center',
 	bgHeight = '100%',
-	classes
+	classes,
+	overlayOpacity = 0
 } = Astro.props
 
 const bgStyle = bg
@@ -68,6 +70,9 @@ const bgStyle = bg
 	]}
 >
 	<div class="section__bg" style={bgStyle}></div>
+  {overlayOpacity > 0 && (
+    <div class={`absolute inset-0 bg-black/${overlayOpacity} pointer-events-none z-[1]`}></div>
+  )}
 	<div class="container">
 		<slot />
 	</div>
